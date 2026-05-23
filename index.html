@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>柳内光子氏 アップダウン単独ライブ | 7月29日</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --dark: #1a1008;
+      --burgundy: #7a1c2e;
+      --cream: #fdf6e3;
+      --text: #2c1a0e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #1a0a04 0%, #3b1208 40%, #1a0a04 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(122,28,46,0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-ornament {
+      font-size: 13px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+
+    .hero-subtitle-top {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(14px, 3vw, 20px);
+      color: var(--gold-light);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(42px, 10vw, 90px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 32px rgba(201,168,76,0.3);
+    }
+
+    .hero-title span {
+      color: var(--gold-light);
+    }
+
+    .divider-gold {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 24px auto;
+    }
+
+    .hero-copy {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(14px, 2.5vw, 18px);
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.1em;
+      margin-bottom: 48px;
+    }
+
+    .hero-date-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(201,168,76,0.5);
+      border-radius: 8px;
+      padding: 28px 48px;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.04);
+      gap: 8px;
+    }
+
+    .hero-date-label {
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+
+    .hero-date {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(36px, 8vw, 72px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-date-sub {
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.1em;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(201,168,76,0.6), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%,100% { opacity:0.3; transform: scaleY(0.6); }
+      50% { opacity:1; transform: scaleY(1); }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 80px 24px; }
+
+    .container { max-width: 860px; margin: 0 auto; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 32px;
+      line-height: 1.4;
+    }
+
+    /* ─── MESSAGE ─── */
+    .message {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+    }
+
+    .message .section-title {
+      color: #fff;
+    }
+
+    .message-body {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(15px, 2.5vw, 18px);
+      line-height: 2.2;
+      color: rgba(255,255,255,0.82);
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .message-body strong {
+      color: var(--gold-light);
+    }
+
+    /* ─── SPEAKER ─── */
+    .speaker {
+      background: var(--cream);
+    }
+
+    .speaker-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 0;
+    }
+
+    .speaker-visual {
+      background: linear-gradient(160deg, var(--burgundy), #3b1208);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .speaker-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: rgba(201,168,76,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+    }
+
+    .speaker-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+    }
+
+    .speaker-name-en {
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      margin-top: 8px;
+    }
+
+    .speaker-roles {
+      margin-top: 16px;
+    }
+
+    .speaker-role {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+
+    .speaker-info {
+      padding: 40px 40px;
+    }
+
+    .speaker-info .section-label { margin-bottom: 8px; }
+
+    .profile-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    .timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 4px 0 4px 20px;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .timeline li .year {
+      color: var(--burgundy);
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    .awards {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .award-badge {
+      background: linear-gradient(135deg, var(--gold), #a07a2a);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── EVENT INFO ─── */
+    .event-info {
+      background: linear-gradient(160deg, #2a0f08 0%, #1a0a04 100%);
+      color: #fff;
+    }
+
+    .event-info .section-title { color: #fff; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 12px;
+    }
+
+    .info-card {
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      padding: 32px 28px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(4px);
+      transition: border-color 0.3s;
+    }
+
+    .info-card:hover {
+      border-color: rgba(201,168,76,0.7);
+    }
+
+    .info-card-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .info-card-label .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .info-card-value {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .info-card-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    /* ─── CTA ─── */
+    .cta {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--burgundy) 0%, #3b1208 100%);
+      border-radius: 16px;
+      padding: 64px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.2), transparent);
+      pointer-events: none;
+    }
+
+    .cta-box .section-label { color: var(--gold-light); border-color: var(--gold-light); }
+
+    .cta-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.9;
+    }
+
+    .cta-details {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+      padding: 24px 40px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .cta-detail-item {
+      text-align: center;
+    }
+
+    .cta-detail-label {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .cta-detail-value {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--dark);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 56px;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .speaker-card {
+        grid-template-columns: 1fr;
+      }
+      .speaker-visual {
+        padding: 40px 24px;
+      }
+      .speaker-info {
+        padding: 32px 24px;
+      }
+      .cta-box { padding: 48px 24px; }
+      .cta-details { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="hero-ornament">働く女性のインスピレーション</p>
+  <p class="hero-subtitle-top">Special Live Talk</p>
+  <h1 class="hero-title">アップダウン<br><span>単独ライブ</span></h1>
+  <div class="divider-gold"></div>
+  <p class="hero-copy">― 未来を創るのは、私たち一人ひとりの選択 ―</p>
+  <div class="hero-date-box">
+    <span class="hero-date-label">DATE</span>
+    <span class="hero-date">7.29</span>
+    <span class="hero-date-sub">水曜日｜開場 19:30 ／ 開演 20:00</span>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ── MESSAGE ── -->
+<section class="message">
+  <div class="container">
+    <span class="section-label" style="color:var(--gold-light);border-color:var(--gold-light);">Message</span>
+    <h2 class="section-title" style="color:#fff;">86歳。まだまだ、<br>これからです。</h2>
+    <p class="message-body">
+      昭和14年生まれ、<strong>柳内光子氏</strong>。<br>
+      女性が企業を率いることが珍しかった時代に、<br>
+      ゼロから事業を立ち上げ、幾多の困難を乗り越えてきました。<br><br>
+      その波乱万丈の人生から紡ぎ出される言葉は、<br>
+      <strong>明日を生きるすべての人へのエール</strong>です。
+    </p>
+  </div>
+</section>
+
+<!-- ── SPEAKER ── -->
+<section class="speaker">
+  <div class="container">
+    <span class="section-label">Speaker</span>
+    <h2 class="section-title">登壇者プロフィール</h2>
+    <div class="speaker-card">
+      <div class="speaker-visual">
+        <div class="speaker-icon">光</div>
+        <p class="speaker-name">柳内<br>光子</p>
+        <p class="speaker-name-en">MITSUKO YANAGUCHI</p>
+        <div class="speaker-roles">
+          <p class="speaker-role">山一興産株式会社<br>代表取締役長</p>
+          <p class="speaker-role" style="margin-top:8px;">株式会社内山アドバンス<br>代表取締役社長</p>
+        </div>
+      </div>
+      <div class="speaker-info">
+        <span class="section-label">Profile</span>
+        <p class="profile-title">1939年（昭和14年）生まれ</p>
+        <ul class="timeline">
+          <li><span class="year">1963</span>内山コンクリート工業（株）（現 内山アドバンス）</li>
+          <li><span class="year">1969</span>総合商社 山一興産（株）を設立</li>
+          <li><span class="year">1984</span>山一興産 社長就任</li>
+          <li><span class="year">1998</span>（社）江戸川豊生会 設立</li>
+          <li><span class="year">2000</span>（株）内山アドバンス 代表取締役社長に就任</li>
+          <li><span class="year">2004〜</span>浦安商工会議所会頭（16年間）</li>
+          <li><span class="year">2004</span>浦安市倫理法人会設立 初代会長</li>
+          <li><span class="year">2025.9</span>一般社団法人 倫理研究所 参事拝命</li>
+        </ul>
+        <div class="awards">
+          <span class="award-badge">🎖 2007 藍綬褒章</span>
+          <span class="award-badge">🏅 2012 渋沢栄一賞</span>
+          <span class="award-badge">🌸 2014 旭日小綬章</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EVENT INFO ── -->
+<section class="event-info">
+  <div class="container">
+    <span class="section-label">Event Info</span>
+    <h2 class="section-title">開催情報</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-label"><span class="dot"></span>DATE &amp; TIME</div>
+        <div class="info-card-value">7月29日（水）</div>
+        <div class="info-card-sub">
+          開場 19:30<br>
+          開演 20:00
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label"><span class="dot"></span>VENUE</div>
+        <div class="info-card-value">SNOWFLAKE</div>
+        <div class="info-card-sub">
+          音更町木野大通東<br>
+          13丁目4-15
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label"><span class="dot"></span>THEME</div>
+        <div class="info-card-value" style="font-size:18px;">未来を創るのは、<br>私たち一人ひとりの選択</div>
+        <div class="info-card-sub">働く女性のインスピレーション</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <span class="section-label">Reserve</span>
+      <h2 class="cta-title">あなたの席を確保してください</h2>
+      <p class="cta-desc">
+        86年の人生が凝縮された、一夜限りのライブトーク。<br>
+        定員に限りがありますので、お早めにどうぞ。
+      </p>
+      <div class="cta-details">
+        <div class="cta-detail-item">
+          <p class="cta-detail-label">DATE</p>
+          <p class="cta-detail-value">7月29日（水）</p>
+        </div>
+        <div class="cta-detail-item">
+          <p class="cta-detail-label">OPEN / START</p>
+          <p class="cta-detail-value">19:30 / 20:00</p>
+        </div>
+        <div class="cta-detail-item">
+          <p class="cta-detail-label">VENUE</p>
+          <p class="cta-detail-value">SNOWFLAKE</p>
+        </div>
+      </div>
+      <a href="#" class="btn-primary">申し込む</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 柳内光子 アップダウン単独ライブ実行委員会</p>
+</footer>
+
+</body>
+</html>
